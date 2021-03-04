@@ -12,7 +12,7 @@ hbs.registerPartials(__dirname + "/views/partials", function (err) {});
 //servir contenido estatico
 app.use(express.static("public"));
 
-app.get("/", function (req, res) {
+/* app.get("/", function (req, res) {
   res.render("home", {
     nombre: "Brian Jacobo",
     titulo: "backend developer",
@@ -25,17 +25,17 @@ app.get("/generic", function (req, res) {
     titulo: "backend developer",
   });
 });
-
-app.get("/elements", function (req, res) {
+ */
+/* app.get("/elements", function (req, res) {
   res.render("elements", {
     nombre: "Brian Jacobo",
     titulo: "backend developer",
   });
 
-});
+}); */
 
 app.get("*", function (req, res) {
-  res.send(__dirname + "/public/404.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.listen(port, () => {
